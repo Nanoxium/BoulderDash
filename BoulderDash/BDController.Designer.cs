@@ -73,7 +73,7 @@
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
             this.sslLife.Name = "sslLife";
-            this.sslLife.Size = new System.Drawing.Size(39, 20);
+            this.sslLife.Size = new System.Drawing.Size(39, 19);
             this.sslLife.Text = "Life : ";
             // 
             // sslTimeLeft
@@ -82,7 +82,7 @@
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
             this.sslTimeLeft.Name = "sslTimeLeft";
-            this.sslTimeLeft.Size = new System.Drawing.Size(70, 20);
+            this.sslTimeLeft.Size = new System.Drawing.Size(70, 19);
             this.sslTimeLeft.Text = "Time Left : ";
             // 
             // sslLevel
@@ -91,7 +91,7 @@
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
             this.sslLevel.Name = "sslLevel";
-            this.sslLevel.Size = new System.Drawing.Size(47, 20);
+            this.sslLevel.Size = new System.Drawing.Size(47, 19);
             this.sslLevel.Text = "Level : ";
             // 
             // sslScore
@@ -100,7 +100,7 @@
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
             this.sslScore.Name = "sslScore";
-            this.sslScore.Size = new System.Drawing.Size(49, 20);
+            this.sslScore.Size = new System.Drawing.Size(49, 19);
             this.sslScore.Text = "Score : ";
             // 
             // sslGemLeft
@@ -109,7 +109,7 @@
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
             this.sslGemLeft.Name = "sslGemLeft";
-            this.sslGemLeft.Size = new System.Drawing.Size(65, 20);
+            this.sslGemLeft.Size = new System.Drawing.Size(65, 19);
             this.sslGemLeft.Text = "Gem left : ";
             // 
             // sslKeyPressed
@@ -117,9 +117,9 @@
             this.sslKeyPressed.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
-            this.sslKeyPressed.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sslKeyPressed.Font = new System.Drawing.Font("Segoe UI Symbol", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sslKeyPressed.Name = "sslKeyPressed";
-            this.sslKeyPressed.Size = new System.Drawing.Size(89, 19);
+            this.sslKeyPressed.Size = new System.Drawing.Size(80, 19);
             this.sslKeyPressed.Text = "Key pressed : ";
             // 
             // msMenu
@@ -175,14 +175,15 @@
             // 
             // tsmStartLevel
             // 
+            this.tsmStartLevel.CheckOnClick = true;
             this.tsmStartLevel.Name = "tsmStartLevel";
-            this.tsmStartLevel.Size = new System.Drawing.Size(128, 22);
+            this.tsmStartLevel.Size = new System.Drawing.Size(152, 22);
             this.tsmStartLevel.Text = "Start Level";
             // 
             // tsmKeys
             // 
             this.tsmKeys.Name = "tsmKeys";
-            this.tsmKeys.Size = new System.Drawing.Size(128, 22);
+            this.tsmKeys.Size = new System.Drawing.Size(152, 22);
             this.tsmKeys.Text = "Keys";
             // 
             // aideToolStripMenuItem
@@ -194,7 +195,8 @@
             // 
             // tmrGameLoop
             // 
-            this.tmrGameLoop.Interval = 16;
+            this.tmrGameLoop.Enabled = true;
+            this.tmrGameLoop.Interval = 1;
             this.tmrGameLoop.Tick += new System.EventHandler(this.tmrGameLoop_Tick);
             // 
             // pnlPositionning

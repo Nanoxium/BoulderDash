@@ -82,6 +82,9 @@
       <DependentUpon>BDController.cs</DependentUpon>
     </Compile>
     <Compile Include="BDGame.cs" />
+    <Compile Include="BoulderItem.cs" />
+    <Compile Include="BoulderLevel.cs" />
+    <Compile Include="BoulderModel.cs" />
     <Compile Include="BoulderView.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -117,7 +120,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="readme.md" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -138,6 +140,54 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\item_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\item_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\item_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\item_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\item_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\item_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\item_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\item_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\item_8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\item_9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\item_10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\item_11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\player_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\player_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\player_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\player_right.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
