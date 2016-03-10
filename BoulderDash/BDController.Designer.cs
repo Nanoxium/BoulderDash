@@ -177,13 +177,13 @@
             // 
             this.tsmStartLevel.CheckOnClick = true;
             this.tsmStartLevel.Name = "tsmStartLevel";
-            this.tsmStartLevel.Size = new System.Drawing.Size(152, 22);
+            this.tsmStartLevel.Size = new System.Drawing.Size(128, 22);
             this.tsmStartLevel.Text = "Start Level";
             // 
             // tsmKeys
             // 
             this.tsmKeys.Name = "tsmKeys";
-            this.tsmKeys.Size = new System.Drawing.Size(152, 22);
+            this.tsmKeys.Size = new System.Drawing.Size(128, 22);
             this.tsmKeys.Text = "Keys";
             // 
             // aideToolStripMenuItem
@@ -196,7 +196,7 @@
             // tmrGameLoop
             // 
             this.tmrGameLoop.Enabled = true;
-            this.tmrGameLoop.Interval = 1;
+            this.tmrGameLoop.Interval = 32;
             this.tmrGameLoop.Tick += new System.EventHandler(this.tmrGameLoop_Tick);
             // 
             // pnlPositionning

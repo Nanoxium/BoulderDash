@@ -12,6 +12,7 @@
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publier\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -82,19 +82,26 @@
       <DependentUpon>BDController.cs</DependentUpon>
     </Compile>
     <Compile Include="BDGame.cs" />
-    <Compile Include="BoulderItem.cs" />
+    <Compile Include="Items\BoulderBorderWall.cs" />
+    <Compile Include="Items\BoulderCharacter.cs" />
+    <Compile Include="Items\BoulderDiamond.cs" />
+    <Compile Include="Items\BoulderDirt.cs" />
+    <Compile Include="Items\BoulderEntity.cs" />
     <Compile Include="BoulderLevel.cs" />
     <Compile Include="BoulderModel.cs" />
     <Compile Include="BoulderView.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Entity.cs" />
+    <Compile Include="Items\BoulderRock.cs" />
+    <Compile Include="Items\BoulderVoid.cs" />
+    <Compile Include="Items\BoulderWall.cs" />
     <Compile Include="KeyDef.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sprite.cs" />
     <EmbeddedResource Include="BDAbout.resx">
       <DependentUpon>BDAbout.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="BDController.resx">
       <DependentUpon>BDController.cs</DependentUpon>
@@ -127,7 +134,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.5 %28x86 et x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

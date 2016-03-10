@@ -21,6 +21,7 @@ namespace BoulderDash
         private BoulderView view;
         private BoulderLevel[] levels;
         private BoulderModel model;
+        private Stopwatch watch;
         #endregion
 
         #region Constructor
@@ -46,8 +47,8 @@ namespace BoulderDash
             //Positionning of the panel
             view = new BoulderView(pnlPositionning.Location, pnlPositionning.Width, pnlPositionning.Height, levels[0]);
             this.Controls.Add(view);
-
-
+            this.watch = Stopwatch.StartNew();
+            this.model.LoadLevel(this.levels[0]);
         }
 
         #endregion
@@ -118,14 +119,12 @@ namespace BoulderDash
                 }
             }
             var level = levels.FirstOrDefault(l => l.name == item.Text);
+            this.model.LoadLevel(level);
         }
 
         #endregion
 
         #region Game
-
-        private int x = 0;
-        private int y = 0;
 
         /// <summary>
         /// the main game loop
@@ -134,7 +133,12 @@ namespace BoulderDash
         /// <param name="e"></param>
         private void tmrGameLoop_Tick(object sender, EventArgs e)
         {
-            this.view.Update();
+            this.model.Update(this.watch.ElapsedMilliseconds);
+            if (this.model.Changed)
+            {
+                this.view.Update(this.model.GetView());
+                this.model.Changed = false;
+            }
         }
 
         #region Key
@@ -193,7 +197,7 @@ namespace BoulderDash
             return new BoulderLevel[] {
             #region levelA1
             new BoulderLevel(
-               0,                // Id
+               0,                // Type
                "A1",             // Name
                "Original level", // Author
                150,              // Time
@@ -229,7 +233,7 @@ namespace BoulderDash
             #endregion
             #region levelB1
             new BoulderLevel(
-               1,                // Id
+               1,                // Type
                "B1",             // Name
                "Original level", // Author
                150,              // Time
@@ -265,7 +269,7 @@ namespace BoulderDash
             #endregion
             #region levelC1
             new BoulderLevel(
-               2,                // Id
+               2,                // Type
                "C1",             // Name
                "Original level", // Author
                150,              // Time
@@ -301,7 +305,7 @@ namespace BoulderDash
             #endregion
             #region levelD1
             new BoulderLevel(
-               3,                // Id
+               3,                // Type
                "D1",             // Name
                "Original level", // Author
                120,              // Time
@@ -338,7 +342,7 @@ namespace BoulderDash
             #region levelBonus1
 
       new BoulderLevel(
-         4,                // Id
+         4,                // Type
          "Bonus 1",        // Name
          "Original level", // Author
          15,               // Time
@@ -374,7 +378,7 @@ namespace BoulderDash
                #endregion
             #region levelE1
             new BoulderLevel(
-               5,                // Id
+               5,                // Type
                "E1",             // Name
                "Original level", // Author
                150,              // Time
@@ -410,7 +414,7 @@ namespace BoulderDash
             #endregion
             #region levelF1
             new BoulderLevel(
-               6,                // Id
+               6,                // Type
                "F1",             // Name
                "Original level", // Author
                150,              // Time
@@ -446,7 +450,7 @@ namespace BoulderDash
             #endregion
             #region levelG1
             new BoulderLevel(
-               7,                // Id
+               7,                // Type
                "G1",             // Name
                "Original level", // Author
                120,              // Time
@@ -482,7 +486,7 @@ namespace BoulderDash
                #endregion
             #region levelH1
             new BoulderLevel(
-               8,                // Id
+               8,                // Type
                "H1",             // Name
                "Original level", // Author
                120,              // Time
@@ -518,7 +522,7 @@ namespace BoulderDash
             #endregion
             #region levelBonus2
             new BoulderLevel(
-               9,               // Id
+               9,               // Type
                "Bonus 2",        // Name
                "Original level", // Author
                15,               // Time
@@ -554,7 +558,7 @@ namespace BoulderDash
             #endregion
             #region levelI1
             new BoulderLevel(
-               10,               // Id
+               10,               // Type
                "I1",             // Name
                "Original level", // Author
                150,              // Time
@@ -590,7 +594,7 @@ namespace BoulderDash
             #endregion
             #region levelJ1
             new BoulderLevel(
-               11,               // Id
+               11,               // Type
                "J1",             // Name
                "Original level", // Author
                150,              // Time
@@ -626,7 +630,7 @@ namespace BoulderDash
             #endregion
             #region levelK1
             new BoulderLevel(
-               12,               // Id
+               12,               // Type
                "K1",             // Name
                "Original level", // Author
                120,              // Time
@@ -662,7 +666,7 @@ namespace BoulderDash
             #endregion
             #region levelL1
             new BoulderLevel(
-               13,               // Id
+               13,               // Type
                "L1",             // Name
                "Original level", // Author
                180,              // Time
@@ -698,7 +702,7 @@ namespace BoulderDash
             #endregion
             #region levelBonus3
             new BoulderLevel(
-               14,               // Id 
+               14,               // Type 
                "Bonus 3",        // Name
                "Original level", // Author
                20,               // Time
@@ -734,7 +738,7 @@ namespace BoulderDash
             #endregion
             #region levelM1
             new BoulderLevel(
-               15,               // Id
+               15,               // Type
                "M1",             // Name
                "Original level", // Author
                160,              // Time
@@ -770,7 +774,7 @@ namespace BoulderDash
             #endregion
             #region levelN1
             new BoulderLevel(
-               16,               // Id
+               16,               // Type
                "N1",             // Name
                "Original level", // Author
                150,              // Time
@@ -806,7 +810,7 @@ namespace BoulderDash
             #endregion
             #region levelO1
             new BoulderLevel(
-               17,               // Id
+               17,               // Type
                "O1",             // Name
                "Original level", // Author
                120,              // Time
@@ -842,7 +846,7 @@ namespace BoulderDash
             #endregion
             #region levelP1
             new BoulderLevel(
-               18,               // Id
+               18,               // Type
                "P1",             // Name
                "Original level", // Author
                150,              // Time
@@ -878,7 +882,7 @@ namespace BoulderDash
                #endregion
             #region levelBonus4
             new BoulderLevel(
-               18,               // Id
+               18,               // Type
                "Bonus 4",        // Name
                "Original level", // Author
                20,               // Time
